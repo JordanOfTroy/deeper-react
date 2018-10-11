@@ -3,16 +3,23 @@ import './App.css'
 
 import CurrencyHOC from './Components/CurrencyHOC'
 import CurrencyRP from './Components/CurrencyRP'
+import Toggle from './Components/Toggle'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Fragment>
-          <h1>Higher Order Components</h1>
-          <CurrencyHOC currency={`AUD`} exchangeRate={1.4} />
-          <CurrencyHOC currency={`CAD`} exchangeRate={1.3} />
-          <CurrencyHOC currency={`Piso`} exchangeRate={54.05} />
+          <Toggle
+            render={() => (
+              <>
+                <h1>Higher Order Components</h1>
+                <CurrencyHOC currency={`AUD`} exchangeRate={1.4} />
+                <CurrencyHOC currency={`CAD`} exchangeRate={1.3} />
+                <CurrencyHOC currency={`Piso`} exchangeRate={54.05} />
+              </>
+            )}
+          />
         </Fragment>
         <h1>Render Prop</h1>
         <CurrencyRP
